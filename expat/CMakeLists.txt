@@ -424,8 +424,10 @@ if(NOT WIN32)
     set_property(TARGET expat PROPERTY NO_SONAME ${NO_SONAME})
 
     if(APPLE)
+        if(0)
         if(NOT CMAKE_VERSION VERSION_GREATER_EQUAL 3.17)
             message(FATAL_ERROR "Expat requires CMake >=3.17 on platform \"APPLE\".")
+        endif()
         endif()
 
         # NOTE: This intends to talk CMake into compatiblity with GNU Libtool

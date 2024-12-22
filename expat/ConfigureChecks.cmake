@@ -47,6 +47,7 @@ endif(WORDS_BIGENDIAN)
 
 if(HAVE_SYS_TYPES_H)
     check_c_source_compiles("
+        #include <stdio.h>
         #include <sys/types.h>
         int main(void) {
             const off_t offset = -123;

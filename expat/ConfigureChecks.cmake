@@ -47,7 +47,6 @@ endif(WORDS_BIGENDIAN)
 
 if(HAVE_SYS_TYPES_H)
     check_c_source_compiles("
-        #include <stdio.h>
         #include <sys/types.h>
         int main(void) {
             const off_t offset = -123;
@@ -57,7 +56,8 @@ if(HAVE_SYS_TYPES_H)
 endif()
 
 if(NOT HAVE_OFF_T)
-    set(off_t "long")
+    # assume all systems have off_t defined
+    # set(off_t "long")
 endif()
 
 check_c_source_compiles("
